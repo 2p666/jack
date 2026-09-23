@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08060e">
+  <title>Para Mel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="scene">
+    <div class="moon" aria-hidden="true"></div>
+    <div class="hill" aria-hidden="true"></div>
+    <p class="label">UMA LUZ PARA QUANDO A NOITE CHEGAR</p>
+    <h1 class="phrase" aria-label="Eu te amo">
+      <span class="letter e-bounce" tabindex="0">E</span>
+      <span class="letter u-spin" tabindex="0">u</span>
+      <span class="space" aria-hidden="true"></span>
+      <span class="letter t-fall" tabindex="0">t</span>
+      <span class="letter e-bat" id="batLetter" tabindex="0">e</span>
+      <span class="space" aria-hidden="true"></span>
+      <span class="letter a-moon" tabindex="0">a</span>
+      <span class="letter m-unfold" tabindex="0">m</span>
+      <span class="letter o-drift" tabindex="0">o</span>
+    </h1>
+    <img id="flyingBat" class="flying-bat" src="assets/bats/cego1.png" alt="" aria-hidden="true">
+    <label class="backdrop-picker" for="backdropInput">Trocar cenário</label>
+    <input id="backdropInput" class="visually-hidden" type="file" accept="image/*">
+    <button id="openCamera" class="camera-button" type="button">Mostrar a luminária</button>
+    <p class="subtitle">uma pequena coisa viva, feita para você</p>
+  </main>
+
+  <section id="cinema" class="cinema locked" aria-labelledby="cinemaTitle" aria-live="polite">
+    <p class="eyebrow">DEPOIS DA LUZ</p>
+    <h2 id="cinemaTitle">Uma noite para nós.</h2>
+    <p class="cinema-copy">Cole um link incorporável de um filme ou vídeo. O endereço fica salvo apenas neste navegador.</p>
+    <form id="movieForm" class="movie-form">
+      <label for="movieUrl">Link do YouTube, Vimeo ou página de incorporação</label>
+      <div class="movie-controls">
+        <input id="movieUrl" type="url" inputmode="url" placeholder="https://www.youtube.com/watch?v=…" autocomplete="url" required disabled>
+        <button id="movieSubmit" type="submit" disabled>Acender a tela</button>
+      </div>
+    </form>
+    <p id="movieStatus" class="movie-status" aria-live="polite">A tela só acende depois que a luminária abrir o portal.</p>
+    <div class="movie-screen">
+      <iframe id="moviePlayer" title="Filme escolhido" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section id="cameraOverlay" class="camera-overlay" aria-hidden="true">
+    <section class="camera-card">
+      <button id="closeCamera" class="close-button" type="button" aria-label="Fechar câmera">×</button>
+      <p class="eyebrow">PORTAL DA LUMINÁRIA</p>
+      <h2>Mostre a luz.</h2>
+      <p id="cameraStatus">Permita o uso da câmera e aponte para a frente da luminária.</p>
+      <div class="camera-stage">
+        <video id="cameraFeed" autoplay playsinline muted></video>
+        <div class="target-frame" aria-hidden="true"></div>
+        <div id="detectedSeal" class="detected-seal">✦ reconhecida ✦</div>
+      </div>
+      <div class="scan-feedback" aria-live="polite">
+        <span>conexão visual</span>
+        <div class="scan-meter"><i id="scanMeter"></i></div>
+        <strong id="scanPercent">0%</strong>
+      </div>
+      <button id="enterPortal" class="portal-button" type="button" disabled>Entrar em Halloween Town</button>
+      <p class="camera-note">Teste atual: deixe a luminária inteira no círculo, de frente e com a lua amarela visível. O indicador acima confirma que a câmera está analisando.</p>
+    </section>
+  </section>
+
+  <canvas id="visionCanvas" hidden></canvas>
+  <img id="lampReference" src="assets/luminaria-referencia.jfif" alt="">
+  <script src="app.js"></script>
+</body>
+</html>

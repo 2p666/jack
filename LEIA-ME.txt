@@ -1,0 +1,32 @@
+TESTE — LUMINÁRIA DE JACK E SALLY
+
+O que foi implementado
+- Cada letra de “Eu te amo” entra de um jeito diferente.
+- Um morcego atravessa a tela e lança a letra “e”.
+- O morcego alterna três imagens para simular o bater das asas.
+- Botão de câmera e reconhecimento visual da luminária.
+
+COMO USAR A CÂMERA
+Não abra apenas com dois cliques no index.html.
+
+Como você já tem XAMPP:
+1. Copie a pasta deste site para C:\xampp\htdocs\
+2. Ligue o Apache no XAMPP.
+3. Abra no navegador:
+   http://localhost/nome-da-pasta/
+4. Clique em “Mostrar a luminária” e permita a câmera.
+
+Para este teste, mostre à câmera a imagem de referência que veio em:
+assets/luminaria-referencia.jfif
+
+Quando a luminária final estiver pronta, substitua esse arquivo por uma foto
+frontal da sua própria luminária. Assim o site passa a procurar especificamente
+pela peça que você fez.
+
+MORCEGOS
+Substitua, quando quiser:
+assets/bats/bat-1.svg
+assets/bats/bat-2.svg
+assets/bats/bat-3.svg
+
+Você pode usar imagens PNG/SVG próprias, mantendo os mesmos nomes.
